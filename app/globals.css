@@ -7,15 +7,59 @@
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+.triangle-play {
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+.underline-effect {
+  position: relative;
+  display: inline-block;
+}
+
+.underline-effect::after {
+  content: "";
+  position: absolute;
+  left: -05%;
+  bottom: -0.1em;
+  width: 140%;
+  height: 0.45em;
+  background-image: url("/curve.svg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1;
+  opacity: 1;
+  filter: contrast(1.2);
+}
+
+.hero-bg-blur {
+  position: absolute;
+  width: 478.94px;
+  height: 496.86px;
+  background: #d5aee4;
+  filter: blur(150px);
+  z-index: -1;
+  left: -420px;
+  top: -60px;
+}
+
+.hero-bg-shape {
+  position: absolute;
+  width: 766.31px;
+  height: 872.58px;
+  z-index: -1;
+  left: 736px;
+  top: -149px;
+  margin-top: -200px;
+  background-image: url("/FrameHero.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: none;
+  @media (min-width: 1024px) {
+    display: block;
+  }
 }

@@ -1,7 +1,5 @@
 # Jadoo Travel Website
 
-![Jadoo Travel](public/Logo.png)
-
 Jadoo Travel is a modern travel booking platform built with Next.js, offering a seamless experience for discovering and booking travel destinations worldwide.
 
 ## 🌟 Features
@@ -90,4 +88,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - Design inspiration from modern travel websites
 - Icons from Lucide React
 - Geist Font by Vercel
-# Jadoo-Travel
