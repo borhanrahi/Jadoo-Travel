@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure consistent rendering across browsers */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Force hardware acceleration where needed */
+.transform-gpu {
+  transform: translate3d(0, 0, 0);
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -41,10 +61,13 @@ body {
   width: 478.94px;
   height: 496.86px;
   background: #d5aee4;
+  -webkit-filter: blur(150px);
   filter: blur(150px);
   z-index: -1;
   left: -420px;
   top: -60px;
+  transform: translate3d(0, 0, 0);
+  will-change: filter;
 }
 
 .hero-bg-shape {

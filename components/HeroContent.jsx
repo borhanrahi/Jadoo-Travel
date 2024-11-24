@@ -58,11 +58,17 @@ const HeroContent = () => {
         {/* Right Content - Image */}
         <div className="w-full lg:w-1/2 relative">
           <Image
-            src="/traveller-1.png" // Add your image path here
+            src="/traveller-1.png"
             alt="Traveller"
             width={765}
             height={764}
             className="w-full h-auto"
+            quality={90}
+            loading="eager"
+            style={{
+              objectFit: "contain",
+              transform: "translate3d(0, 0, 0)",
+            }}
           />
 
           {/* Decorative planes */}
