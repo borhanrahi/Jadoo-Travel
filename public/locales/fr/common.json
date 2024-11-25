@@ -1,0 +1,10 @@
+{
+  "nav": {
+    "destinations": "Destinations",
+    "hotels": "Hôtels",
+    "flights": "Vols",
+    "bookings": "Réservations",
+    "login": "Connexion",
+    "signup": "S'inscrire"
+  }
+}

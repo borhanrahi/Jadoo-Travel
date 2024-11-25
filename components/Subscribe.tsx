@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 
 interface SubscribeProps {
@@ -81,8 +83,8 @@ export default function Subscribe({
             </div>
           </div>
 
-          {/* Decorative circle with send icon - right side */}
-          <div className="absolute right-4 bottom-4 md:right-8 md:bottom-8 lg:right-[-35px] lg:top-1/2 lg:-translate-y-1/2">
+          {/* Decorative circle with send icon - adjusted position */}
+          <div className="absolute right-4 top-[10%] md:right-8 lg:right-[-35px] translate-y-[-50%]">
             <div
               className="w-[50px] h-[50px] md:w-[60px] md:h-[60px] lg:w-[70px] lg:h-[70px] 
                        rounded-full bg-gradient-to-br from-[#747DEF] to-[#5E3BE1] 

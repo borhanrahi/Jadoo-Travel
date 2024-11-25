@@ -1,19 +1,50 @@
 "use client";
-import { useState } from "react";
+
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+interface NavItem {
+  name: string;
+  href: string;
+}
+
 const TopNav = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const [language, setLanguage] = useState("EN");
 
-  const navItems = [
-    { name: "Destinations", href: "#" },
-    { name: "Hotels", href: "#" },
-    { name: "Flights", href: "#" },
-    { name: "Bookings", href: "#" },
-    { name: "Login", href: "#" },
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const navItems: NavItem[] = [
+    { name: "Destinations", href: "/destinations" },
+    { name: "Hotels", href: "/hotels" },
+    { name: "Flights", href: "/flights" },
+    { name: "Bookings", href: "/bookings" },
+    { name: "Login", href: "/login" },
   ];
+
+  if (!mounted) {
+    return (
+      <nav className="relative px-4 py-3 lg:px-36 lg:py-12">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center">
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/Logo.png"
+                alt="Jadoo"
+                width={115}
+                height={34}
+                priority
+              />
+            </Link>
+          </div>
+        </div>
+      </nav>
+    );
+  }
 
   return (
     <nav className="relative px-4 py-3 lg:px-36 lg:py-12">
@@ -32,7 +63,12 @@ const TopNav = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <button className="lg:hidden" onClick={() => setIsOpen(!isOpen)}>
+        <button
+          type="button"
+          className="lg:hidden"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle menu"
+        >
           <svg
             className="h-6 w-6"
             fill="none"
@@ -69,18 +105,24 @@ const TopNav = () => {
             </Link>
           ))}
 
-          {/* Sign Up Button */}
-          <button className="rounded-[5px] border border-[#212832] px-6 py-2.5 text-[#212832] hover:bg-[#212832] hover:text-white">
-            Sign up
-          </button>
+          {/* Desktop Sign Up Button */}
+          <Link href="/signup">
+            <button
+              type="button"
+              className="rounded-[5px] border border-[#212832] px-6 py-2.5 text-[#212832] hover:bg-[#212832] hover:text-white"
+            >
+              Sign up
+            </button>
+          </Link>
 
           {/* Language Selector */}
           <div className="relative">
             <button
+              type="button"
               className="flex items-center space-x-2 text-[#212832]"
               onClick={() => setLanguage(language === "EN" ? "FR" : "EN")}
             >
-              <span>{language}</span>
+              <span>{language === "EN" ? "EN" : "FR"}</span>
               <svg
                 className="h-1.5 w-2.5"
                 viewBox="0 0 9 5"
@@ -106,14 +148,21 @@ const TopNav = () => {
               {item.name}
             </Link>
           ))}
-          <button className="my-2 w-full rounded-[5px] border border-[#212832] px-6 py-2.5 text-[#212832]">
-            Sign up
-          </button>
+          {/* Mobile Sign Up Button */}
+          <Link href="/signup">
+            <button
+              type="button"
+              className="my-2 w-full rounded-[5px] border border-[#212832] px-6 py-2.5 text-[#212832]"
+            >
+              Sign up
+            </button>
+          </Link>
           <button
+            type="button"
             className="flex w-full items-center justify-center space-x-2 py-2 text-[#212832]"
             onClick={() => setLanguage(language === "EN" ? "FR" : "EN")}
           >
-            <span>{language}</span>
+            <span>{language === "EN" ? "EN" : "FR"}</span>
             <svg
               className="h-1.5 w-2.5"
               viewBox="0 0 9 5"

@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 
 const HeroContent = () => {
@@ -14,7 +16,7 @@ const HeroContent = () => {
             Best destinations around the world
           </p>
 
-          {/* Heading - Updated with better text wrapping control */}
+          {/* Heading */}
           <div className="relative max-w-[600px]">
             <h1 className="text-[#181E4B] text-4xl lg:text-6xl font-bold leading-[1.2] whitespace-normal break-words">
               Travel,{" "}
@@ -23,21 +25,27 @@ const HeroContent = () => {
             </h1>
           </div>
 
-          {/* Description - Added consistent width */}
+          {/* Description */}
           <p className="text-[#5E6282] text-base lg:text-lg max-w-[477px] whitespace-normal">
             Built Wicket longer admire do barton vanity itself do in it.
             Preferred to sportsmen it engrossed listening. Park gate sell they
             west hard for the.
           </p>
 
-          {/* CTA Buttons - Added better spacing */}
+          {/* CTA Buttons */}
           <div className="flex flex-wrap items-center gap-6 mt-8">
-            <button className="bg-[#F1A501] text-white px-6 py-3 rounded-lg transition-all duration-300 hover:bg-[#d89400] hover:shadow-lg whitespace-nowrap">
+            <button
+              type="button"
+              className="bg-[#F1A501] text-white px-6 py-3 rounded-lg transition-all duration-300 hover:bg-[#d89400] hover:shadow-lg whitespace-nowrap"
+            >
               Find out more
             </button>
             <div className="flex items-center gap-4">
-              <button className="w-12 h-12 rounded-full bg-[#DF694F] flex items-center justify-center transition-all duration-300 hover:bg-[#c85640] hover:shadow-lg">
-                <div className="w-3 h-3 bg-white triangle-play"></div>
+              <button
+                type="button"
+                className="w-12 h-12 rounded-full bg-[#DF694F] flex items-center justify-center transition-all duration-300 hover:bg-[#c85640] hover:shadow-lg"
+              >
+                <div className="w-3 h-3 bg-white triangle-play" />
               </button>
               <span className="text-[#686D77] text-lg whitespace-nowrap">
                 Play Demo

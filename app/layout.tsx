@@ -1,8 +1,8 @@
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import TopNav from "@/components/TopNav";
 import Footer from "@/components/Footer";
+import TopNav from "@/components/TopNav";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -10,6 +10,7 @@ const geistSans = localFont({
   weight: "100 900",
   display: "swap",
 });
+
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
@@ -17,7 +18,7 @@ const geistMono = localFont({
   display: "swap",
 });
 
-export const viewport: Viewport = {
+export const viewport = {
   width: "device-width",
   initialScale: 1,
   themeColor: "#F1A501",
